@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from pandas import DataFrame
 import tushare as ts
 
-def get_date(yr):
+def get_date(yr): # 使用函数形式封装的调用某一年天气方式，尚在调试。
     l1 = []
     for m in range(1, 13): # 获得天气数据的已有实现方案
         for d in range(1, 32):
