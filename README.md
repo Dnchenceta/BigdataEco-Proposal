@@ -12,8 +12,12 @@
 
 3. code
 
-看文件。
+- 看文件。
 
 4. idea
 
-...
+- ...
+
+### 一个Shortcut
+
+天气网址在[这里](https://www.wunderground.com/history/)
