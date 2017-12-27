@@ -1,10 +1,11 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import re
+from pandas import DataFrame
 
 '''
-这次是一个尝试，成功地获取了某一天的一共13类的数据，但是仍然储存在一个字符串列表中。
-下一步需要考虑怎样从列表raw中获取数据。
+这次是一个尝试，成功地获取了某一天的一共13类的数据，保存在了一个dataframe中。
+接下来要做的是封装成为函数，希望能实现日期为横行的形式。
 '''
 
 url = 'https://www.wunderground.com/history/airport/ZSPD/2017/12/26/DailyHistory.html'
@@ -24,4 +25,16 @@ for each in raw:
     if re.search('"indent"(.*)', straw) != None:
         l2.append(straw)
         
-print(raw)
+l3 = []
+for each in l2:
+    var = re.search('(\d+(\.\d+)?)', each)
+    if var != None:
+        var = var.group()
+    else:
+        var = 0
+    l3.append(var)
+    
+data = {'items': l1, 'num': l3}
+df = DataFrame(data)
+
+# 应该转变为df.T的形式。
