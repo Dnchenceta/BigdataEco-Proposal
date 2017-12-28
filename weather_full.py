@@ -7,7 +7,7 @@ get_date(yr)实现获得某一年每一天的日期（其实实现的复杂了�
 get_weather(yr)使用上述两个函数获取某一年每一天的天气数据，保存在一个dataframe中。
 未解决的问题是：
 1. 数据清洗，有很多nan行与缺失数据行。
-2. 数据结构改变，理想的结构应该是每一行日期对应各项天气变量的数值。
+2. 数据结构改变，理想的结构应该是每一行日期对应各项天气变量的数值。（这个加个T就行了啊！
 3. 关系数据，需要将天气数据与沪企指数数据整合起来。
 '''
 
@@ -82,5 +82,6 @@ def get_weather(yr):
         else:
             temp_df = pd.concat([temp_df, temp], axis = 1)
         print(each, temp[0])
+    temp_df = temp_df.T
     return(temp_df)
     
