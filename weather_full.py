@@ -1,5 +1,16 @@
 # -*- coding: utf-8 -*-
 
+'''
+这次实现了函数形式的封装。
+get_weather_bydate(date)实现获得某一天的天气数据，并保存在一个Series中。
+get_date(yr)实现获得某一年每一天的日期（其实实现的复杂了一些，可以直接调用timestamp的）
+get_weather(yr)使用上述两个函数获取某一年每一天的天气数据，保存在一个dataframe中。
+未解决的问题是：
+1. 数据清洗，有很多nan行与缺失数据行。
+2. 数据结构改变，理想的结构应该是每一行日期对应各项天气变量的数值。
+3. 关系数据，需要将天气数据与沪企指数数据整合起来。
+'''
+
 from bs4 import BeautifulSoup
 import urllib.request
 import re
