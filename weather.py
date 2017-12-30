@@ -45,7 +45,7 @@ for m in range(1, 13): # 获得天气数据的已有实现方案，待封装成�
     we_df = DataFrame({'date': l1, 'temp': l2})
 
 import tushare as ts
-df1 = ts.get_k_data(code = '000062', index = True) #获取sh000062数据
+df1 = ts.get_k_data(code = '000062', index = True, start = '2015-01-01') #获取sh000062数据
 
 # 应该把两个数据生成dataframe，然后再用关系数据库或者python/R的处理方法整合，再进行建模回归。
 
